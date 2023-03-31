@@ -1,6 +1,6 @@
 Name:		texlive-addliga
 Version:	50912
-Release:	1
+Release:	2
 Summary:	Access basic ligatures in legacy TrueType fonts
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/addliga
