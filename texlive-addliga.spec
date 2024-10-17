@@ -3,7 +3,7 @@ Version:	50912
 Release:	2
 Summary:	Access basic ligatures in legacy TrueType fonts
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/addliga
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/addliga
 License:	pd
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/addliga.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/addliga.doc.r%{version}.tar.xz
