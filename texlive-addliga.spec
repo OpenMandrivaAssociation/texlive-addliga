@@ -1,37 +1,24 @@
-Name:		texlive-addliga
-Version:	50912
-Release:	2
+%global tl_name addliga
+%global tl_revision 78793
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.0
+Release:	%{tl_revision}.1
 Summary:	Access basic ligatures in legacy TrueType fonts
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/addliga
+URL:		https://www.ctan.org/tex-archive/macros/luatex/latex/addliga
 License:	pd
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/addliga.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/addliga.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/addliga.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/addliga.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This small and simple package allows LuaLaTeX users to access
-basic ligatures (ff, fi, ffi, fl, ffl) in legacy TrueType fonts
-(those lacking a liga table) accessed via fontspec.
+This small and simple package allows LuaLaTeX users to access basic
+ligatures (ff, fi, ffi, fl, ffl) in legacy TrueType fonts (those lacking
+a liga table) accessed via fontspec.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/lualatex/addliga
-%doc %{_texmfdistdir}/doc/lualatex/addliga
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
